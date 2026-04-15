@@ -1,1 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OWASP Top 10: 2025 - Bug Hunter Perspective</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons for graphics -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #050a14; /* Deep dark blue background */
+            color: #ffffff;
+        }
+        
+        /* Neon text utility classes for icons/headers */
+        .neon-red { filter: drop-shadow(0 0 8px rgba(239, 68, 68, 0.8)); }
+        .neon-orange { filter: drop-shadow(0 0 8px rgba(249, 115, 22, 0.8)); }
+        .neon-purple { filter: drop-shadow(0 0 8px rgba(168, 85, 247, 0.8)); }
+        .neon-blue { filter: drop-shadow(0 0 8px rgba(59, 130, 246, 0.8)); }
+        .neon-green { filter: drop-shadow(0 0 8px rgba(34, 197, 94, 0.8)); }
+        .neon-yellow { filter: drop-shadow(0 0 8px rgba(234, 179, 8, 0.8)); }
+        .neon-pink { filter: drop-shadow(0 0 8px rgba(236, 72, 153, 0.8)); }
+        .neon-indigo { filter: drop-shadow(0 0 8px rgba(99, 102, 241, 0.8)); }
+        .neon-cyan { filter: drop-shadow(0 0 8px rgba(6, 182, 212, 0.8)); }
+    </style>
+</head>
+<body class="min-h-screen p-4 md:p-8 flex flex-col justify-center items-center">
 
+    <div class="max-w-[1600px] w-full flex flex-col gap-8">
+        
+        <!-- Header Section -->
+        <header class="flex flex-col xl:flex-row justify-between items-start xl:items-center border-b border-gray-800 pb-6 gap-6">
+            <div>
+                <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-3">
+                    <span class="text-white">OWASP </span>
+                    <span class="text-green-500 drop-shadow-[0_0_10px_rgba(34,197,94,0.5)]">TOP 10:</span>
+                    <span class="text-blue-500 drop-shadow-[0_0_10px_rgba(59,130,246,0.5)]"> 2025</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-gray-300 font-medium">
+                    The Most Critical <span class="text-green-400">Web Application Security Risks</span> You Must Know!
+                </p>
+            </div>
+            <div class="flex items-center gap-5 xl:text-right bg-gray-900/50 p-4 rounded-2xl border border-gray-800">
+                <div class="hidden sm:block">
+                    <h2 class="text-2xl md:text-3xl font-bold text-green-500 tracking-wide">BUG HUNTER PERSPECTIVE</h2>
+                    <p class="text-lg text-gray-400 mt-1">Simple. Practical. Up-to-Date.</p>
+                </div>
+                <div class="text-cyan-400 bg-cyan-900/30 p-3 rounded-full border border-cyan-800 neon-cyan">
+                    <i data-lucide="venetian-mask" class="w-10 h-10 md:w-14 md:h-14"></i>
+                </div>
+                <!-- Mobile text version -->
+                <div class="sm:hidden block">
+                    <h2 class="text-xl font-bold text-green-500 leading-tight">BUG HUNTER PERSPECTIVE</h2>
+                </div>
+            </div>
+        </header>
+
+        <!-- Grid Cards Section -->
+        <!-- Responsive Grid: 1 col on mobile, 2 on tablets, 3 on large tablets, 5 on desktop -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5">
+            
+            <!-- A01 -->
+            <div class="bg-gray-900/60 border-t-2 border-red-500 rounded-xl p-5 flex flex-col justify-between hover:bg-gray-800/80 transition-all shadow-lg hover:shadow-red-500/10">
+                <div>
+                    <h3 class="text-xl font-bold text-red-500 mb-3">A01: Broken Access Control</h3>
+                    <p class="text-[1.05rem] leading-relaxed text-gray-300 mb-6">Users can access what they shouldn't. IDOR, Privilege Escalation, SSRF now included here.</p>
+                </div>
+                <div class="flex items-end justify-between gap-2 border-t border-gray-800 pt-4">
+                    <div>
+                        <p class="text-red-500 font-semibold mb-1 text-sm uppercase tracking-wider">Bug Hunter Tip:</p>
+                        <p class="text-[1rem] text-gray-400">Test roles, IDs, and function-level access.</p>
+                    </div>
+                    <i data-lucide="lock" class="w-10 h-10 text-red-500 shrink-0 neon-red mb-1"></i>
+                </div>
+            </div>
+
+            <!-- A02 -->
+            <div class="bg-gray-900/60 border-t-2 border-orange-500 rounded-xl p-5 flex flex-col justify-between hover:bg-gray-800/80 transition-all shadow-lg hover:shadow-orange-500/10">
+                <div>
+                    <h3 class="text-xl font-bold text-orange-500 mb-3">A02: Security Misconfiguration</h3>
+                    <p class="text-[1.05rem] leading-relaxed text-gray-300 mb-6">Default settings, exposed panels, weak headers. Easy entry for attackers.</p>
+                </div>
+                <div class="flex items-end justify-between gap-2 border-t border-gray-800 pt-4">
+                    <div>
+                        <p class="text-orange-500 font-semibold mb-1 text-sm uppercase tracking-wider">Bug Hunter Tip:</p>
+                        <p class="text-[1rem] text-gray-400">Check configs, cloud storage, admin panels.</p>
+                    </div>
+                    <i data-lucide="settings" class="w-10 h-10 text-orange-500 shrink-0 neon-orange mb-1"></i>
+                </div>
+            </div>
+
+            <!-- A03 -->
+            <div class="bg-gray-900/60 border-t-2 border-purple-500 rounded-xl p-5 flex flex-col justify-between hover:bg-gray-800/80 transition-all shadow-lg hover:shadow-purple-500/10">
+                <div>
+                    <h3 class="text-xl font-bold text-purple-500 mb-3">A03: Software Supply Chain Failures <span class="text-xs bg-purple-500/20 px-2 py-1 rounded ml-1 text-purple-300">NEW</span></h3>
+                    <p class="text-[1.05rem] leading-relaxed text-gray-300 mb-6">Compromised libraries, CI/CD, and dependencies can break everything.</p>
+                </div>
+                <div class="flex items-end justify-between gap-2 border-t border-gray-800 pt-4">
+                    <div>
+                        <p class="text-purple-500 font-semibold mb-1 text-sm uppercase tracking-wider">Bug Hunter Tip:</p>
+                        <p class="text-[1rem] text-gray-400">Analyze SBOM, review dependencies, check pipelines.</p>
+                    </div>
+                    <i data-lucide="package" class="w-10 h-10 text-purple-500 shrink-0 neon-purple mb-1"></i>
+                </div>
+            </div>
+
+            <!-- A04 -->
+            <div class="bg-gray-900/60 border-t-2 border-blue-500 rounded-xl p-5 flex flex-col justify-between hover:bg-gray-800/80 transition-all shadow-lg hover:shadow-blue-500/10">
+                <div>
+                    <h3 class="text-xl font-bold text-blue-500 mb-3">A04: Cryptographic Failures</h3>
+                    <p class="text-[1.05rem] leading-relaxed text-gray-300 mb-6">Weak encryption, poor key management, data leaks.</p>
+                </div>
+                <div class="flex items-end justify-between gap-2 border-t border-gray-800 pt-4">
+                    <div>
+                        <p class="text-blue-500 font-semibold mb-1 text-sm uppercase tracking-wider">Bug Hunter Tip:</p>
+                        <p class="text-[1rem] text-gray-400">Look for hardcoded keys, weak ciphers, no encryption.</p>
+                    </div>
+                    <i data-lucide="shield" class="w-10 h-10 text-blue-500 shrink-0 neon-blue mb-1"></i>
+                </div>
+            </div>
+
+            <!-- A05 -->
+            <div class="bg-gray-900/60 border-t-2 border-green-500 rounded-xl p-5 flex flex-col justify-between hover:bg-gray-800/80 transition-all shadow-lg hover:shadow-green-500/10">
+                <div>
+                    <h3 class="text-xl font-bold text-green-500 mb-3">A05: Injection</h3>
+                    <p class="text-[1.05rem] leading-relaxed text-gray-300 mb-6">SQL Injection, Command Injection, still a classic and deadly.</p>
+                </div>
+                <div class="flex items-end justify-between gap-2 border-t border-gray-800 pt-4">
+                    <div>
+                        <p class="text-green-500 font-semibold mb-1 text-sm uppercase tracking-wider">Bug Hunter Tip:</p>
+                        <p class="text-[1rem] text-gray-400">Test all inputs, Don't trust, always verify.</p>
+                    </div>
+                    <i data-lucide="terminal-square" class="w-10 h-10 text-green-500 shrink-0 neon-green mb-1"></i>
+                </div>
+            </div>
+
+            <!-- A06 -->
+            <div class="bg-gray-900/60 border-t-2 border-yellow-500 rounded-xl p-5 flex flex-col justify-between hover:bg-gray-800/80 transition-all shadow-lg hover:shadow-yellow-500/10">
+                <div>
+                    <h3 class="text-xl font-bold text-yellow-500 mb-3">A06: Insecure Design</h3>
+                    <p class="text-[1.05rem] leading-relaxed text-gray-300 mb-6">Flawed logic, missing threat modeling, broken trust boundaries.</p>
+                </div>
+                <div class="flex items-end justify-between gap-2 border-t border-gray-800 pt-4">
+                    <div>
+                        <p class="text-yellow-500 font-semibold mb-1 text-sm uppercase tracking-wider">Bug Hunter Tip:</p>
+                        <p class="text-[1rem] text-gray-400">Attack the logic, not just the code.</p>
+                    </div>
+                    <i data-lucide="network" class="w-10 h-10 text-yellow-500 shrink-0 neon-yellow mb-1"></i>
+                </div>
+            </div>
+
+            <!-- A07 -->
+            <div class="bg-gray-900/60 border-t-2 border-pink-500 rounded-xl p-5 flex flex-col justify-between hover:bg-gray-800/80 transition-all shadow-lg hover:shadow-pink-500/10">
+                <div>
+                    <h3 class="text-xl font-bold text-pink-500 mb-3">A07: Authentication Failures</h3>
+                    <p class="text-[1.05rem] leading-relaxed text-gray-300 mb-6">Weak login, bad session management, account takeover risks.</p>
+                </div>
+                <div class="flex items-end justify-between gap-2 border-t border-gray-800 pt-4">
+                    <div>
+                        <p class="text-pink-500 font-semibold mb-1 text-sm uppercase tracking-wider">Bug Hunter Tip:</p>
+                        <p class="text-[1rem] text-gray-400">Test login, session, MFA, and reset flows.</p>
+                    </div>
+                    <i data-lucide="user-x" class="w-10 h-10 text-pink-500 shrink-0 neon-pink mb-1"></i>
+                </div>
+            </div>
+
+            <!-- A08 -->
+            <div class="bg-gray-900/60 border-t-2 border-indigo-400 rounded-xl p-5 flex flex-col justify-between hover:bg-gray-800/80 transition-all shadow-lg hover:shadow-indigo-500/10">
+                <div>
+                    <h3 class="text-xl font-bold text-indigo-400 mb-3">A08: Software & Data Integrity Failures</h3>
+                    <p class="text-[1.05rem] leading-relaxed text-gray-300 mb-6">Tampered updates, malicious packages, hidden backdoors.</p>
+                </div>
+                <div class="flex items-end justify-between gap-2 border-t border-gray-800 pt-4">
+                    <div>
+                        <p class="text-indigo-400 font-semibold mb-1 text-sm uppercase tracking-wider">Bug Hunter Tip:</p>
+                        <p class="text-[1rem] text-gray-400">Verify integrity, check signatures and update process.</p>
+                    </div>
+                    <i data-lucide="file-check-2" class="w-10 h-10 text-indigo-400 shrink-0 neon-indigo mb-1"></i>
+                </div>
+            </div>
+
+            <!-- A09 -->
+            <div class="bg-gray-900/60 border-t-2 border-cyan-400 rounded-xl p-5 flex flex-col justify-between hover:bg-gray-800/80 transition-all shadow-lg hover:shadow-cyan-500/10">
+                <div>
+                    <h3 class="text-xl font-bold text-cyan-400 mb-3">A09: Logging & Alerting Failures</h3>
+                    <p class="text-[1.05rem] leading-relaxed text-gray-300 mb-6">Attacks go undetected without proper logs and alerts.</p>
+                </div>
+                <div class="flex items-end justify-between gap-2 border-t border-gray-800 pt-4">
+                    <div>
+                        <p class="text-cyan-400 font-semibold mb-1 text-sm uppercase tracking-wider">Bug Hunter Tip:</p>
+                        <p class="text-[1rem] text-gray-400">Check logging, monitoring, and incident response.</p>
+                    </div>
+                    <i data-lucide="activity" class="w-10 h-10 text-cyan-400 shrink-0 neon-cyan mb-1"></i>
+                </div>
+            </div>
+
+            <!-- A10 -->
+            <div class="bg-gray-900/60 border-t-2 border-red-600 rounded-xl p-5 flex flex-col justify-between hover:bg-gray-800/80 transition-all shadow-lg hover:shadow-red-600/10">
+                <div>
+                    <h3 class="text-xl font-bold text-red-500 mb-3">A10: Mishandling of Exceptional Conditions <span class="text-xs bg-red-500/20 px-2 py-1 rounded ml-1 text-red-300">NEW</span></h3>
+                    <p class="text-[1.05rem] leading-relaxed text-gray-300 mb-6">Poor error handling can lead to fail-open or information leakage.</p>
+                </div>
+                <div class="flex items-end justify-between gap-2 border-t border-gray-800 pt-4">
+                    <div>
+                        <p class="text-red-500 font-semibold mb-1 text-sm uppercase tracking-wider">Bug Hunter Tip:</p>
+                        <p class="text-[1rem] text-gray-400">Test invalid inputs, edge cases, and error responses.</p>
+                    </div>
+                    <i data-lucide="triangle-alert" class="w-10 h-10 text-red-500 shrink-0 neon-red mb-1"></i>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Bottom Insights Section -->
+        <div class="grid grid-cols-1 xl:grid-cols-5 gap-6">
+            
+            <!-- Key Changes Box -->
+            <div class="xl:col-span-3 border border-green-500/50 bg-green-950/20 rounded-2xl p-6 md:p-8 flex flex-col md:flex-row gap-6 items-start hover:bg-green-950/30 transition-colors shadow-[0_0_15px_rgba(34,197,94,0.1)]">
+                <div class="bg-green-900/40 p-4 rounded-full neon-green mt-1">
+                    <i data-lucide="lightbulb" class="w-10 h-10 md:w-12 md:h-12 text-green-400"></i>
+                </div>
+                <div>
+                    <h3 class="text-2xl font-bold text-green-500 mb-4 tracking-wide">KEY CHANGES IN 2025</h3>
+                    <ul class="text-lg md:text-xl text-gray-300 space-y-3 list-disc list-inside">
+                        <li><span class="text-white font-medium">SSRF</span> merged into Broken Access Control (A01)</li>
+                        <li><span class="text-white font-medium">Software Supply Chain Failures</span> is a New Top 10 Entry (A03)</li>
+                        <li><span class="text-white font-medium">Mishandling of Exceptional Conditions</span> is a New Top 10 Entry (A10)</li>
+                        <li>Reflects modern threats: <span class="text-green-300">Cloud, CI/CD, Dependencies & Complex Systems</span></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Mindset Box -->
+            <div class="xl:col-span-2 border border-teal-500/50 bg-teal-950/20 rounded-2xl p-6 md:p-8 flex flex-col md:flex-row gap-6 items-center hover:bg-teal-950/30 transition-colors shadow-[0_0_15px_rgba(20,184,166,0.1)]">
+                <div class="neon-cyan shrink-0">
+                    <i data-lucide="crosshair" class="w-16 h-16 text-teal-400"></i>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-teal-500 mb-3 tracking-wide">BUG HUNTER MINDSET:</h3>
+                    <blockquote class="text-xl md:text-2xl font-medium text-gray-100 italic leading-snug">
+                        "Where input meets trust<br>that's your attack surface."
+                    </blockquote>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Small Credit Footer Section (kept small as requested) -->
+        <footer class="mt-4 bg-[#0a1128] border border-blue-900/80 rounded-xl p-3 flex flex-col sm:flex-row justify-between items-center gap-3">
+            <div class="flex items-center gap-3">
+                <div class="bg-[#0A66C2] p-1.5 rounded text-white shadow-lg">
+                    <i data-lucide="linkedin" class="w-5 h-5 fill-current"></i>
+                </div>
+                <div class="flex flex-col sm:flex-row sm:items-center sm:gap-2">
+                    <p class="text-xs text-gray-400 font-medium">Follow My LinkedIn Profile:</p>
+                    <a href="https://linkedin.com/in/MdShahinRaza" target="_blank" class="text-sm font-bold text-blue-400 hover:text-blue-300 transition-colors">
+                        LinkedIn.com/in/MdShahinRaza
+                    </a>
+                </div>
+            </div>
+            <div class="hidden sm:block opacity-50">
+                <i data-lucide="shield" class="w-6 h-6 text-blue-500"></i>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- Initialize Icons -->
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
